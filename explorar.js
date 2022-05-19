@@ -1,11 +1,15 @@
 const input = document.getElementById('input')
 const grind = document.getElementsByClassName('grid')
+const img = document.getElementsByClassName('img')
 [0]
 
 input.addEventListener('keydown', function(e){
     if(e.key === 'Enter')
     loadImg();
    
+})
+img.addEventListener('click', function(event){
+    
 })
 
 function loadImg(){
@@ -35,7 +39,7 @@ function loadImg(){
 
 }
 function removeImgs(){
-    grid.innerHTML='';
+    grid.innerHTML= '';
 
 
 
