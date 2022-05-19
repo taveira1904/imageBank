@@ -269,10 +269,6 @@ section{
 .tile:nth-child(5){
     grid-column: span 3;
 }
-
-
-
-
     #sobre p{
         color: #fff;
         font-size: 1em;
