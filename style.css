@@ -88,19 +88,23 @@ section{
     font-weight: 600;
 }
 
-
+#sobre p{
+    color: #fff;
+    font-size: 1em;
+    margin: 30px 0;
+}
 
 /*======= Scroll bar =======*/
 ::-webkit-scrollbar{
     background: #fff;
-    width: 15px;
-    
+    width: 11px;
+    border-radius: 2em;
 }
 
 ::-webkit-scrollbar-thumb{
-    background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(27,27,148,1) 87%, rgba(2,0,36,1) 99%);
+    background: #282f4e;
     width: 100%;
-   
+    border-radius: 2em;
 }
 
 ::-webkit-scrollbar-thumb:hover{
@@ -114,102 +118,18 @@ section{
 }
 
 .scroll-indicator-bar{
-    background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(27,27,148,1) 87%, rgba(2,0,36,1) 99%);
+    background: #199fff;
     width: 0%;
     height: 100%;
- 
+    box-shadow: 0 5px 25px #199fff,
+                0 5px 50px #199fff;
 }
 
-
-
-.container{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 1rem;
+.nav-close-btn, .nav-menu-btn{
+    display: none;
 }
 
-.tile img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.tile:nth-child(1){
-    grid-column: span 4;
-    grid-row: span 2;
-}
-
-.tile:nth-child(2),
-.tile:nth-child(3){
-    grid-column: span 2;
-}
-
-.tile:nth-child(4),
-.tile:nth-child(5){
-    grid-column: span 3;
-}
-
-
-#sobre p{
-    color: #fff;
-    font-size: 1em;
-    margin: 30px 0;
-}
-#footer{
-    margin-top: 5px;
-    border-top: 1px solid gold;
-    background-color: #055368;
-    width: 100%;
-    text-align: center;
-    color: white;
-}
-
-
-  
-  #janelaSlide {
-    
-  height: 533px;
-  width: 799px;
-  position:relative;
-  overflow: hidden;
-  
- 
-   
-    
-  
-    
-  
-  }
-  
-  #imagens {
-    position: relative;
-    
-   
-    background-size: cover;
-    background-position: center;
-    
-  
-      display: flex;
-      background-size: cover;
-      position: absolute;
-      top:0;
-      left:0;
-      transition: left 1s ease-in-out;
-      
-    }
-  
-  form { 
-        font-size: 24px;
-        margin-top: 2em;
-        display: flex;
-        align-items: center;
-  }  
-
-
-
-
-
-
-  /*======= Media queries (max-width: 1100px) =======*/
+/*======= Media queries (max-width: 1100px) =======*/
 @media screen and (max-width: 1100px){
     header .nav-bar{
         padding: 0 50px;
@@ -241,7 +161,7 @@ section{
     }
 
     .navigation{
-  
+        z-index: 99999;
         position: fixed;
         background: rgba(0, 0, 0, 0.5);
         width: 100%;
@@ -263,9 +183,9 @@ section{
 
     .navigation .nav-items{
         position: relative;
-        background: rgb(119, 186, 240);
-        width: 350px;
-        max-width: 350px;
+        background: #fff;
+        width: 400px;
+        max-width: 400px;
         display: grid;
         place-content: center;
         margin: 20px;
@@ -303,41 +223,66 @@ section{
         cursor: pointer;
     }
 }
-#myVideo {
-    
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-  }
-  
-  /* Add some content at the bottom of the video/page */
-  .content {
-    
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    color: #f1f1f1;
+      
+
+
+
+#imagens {
+    position: relative;    
+    background-size: cover;
+    background-position: center;
+      display: flex;
+      background-size: cover;
+      position: absolute;
+      top:0;
+      left:0;
+      transition: left 1s ease-in-out;
+      
+    }
+
+
+
+
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1rem;
+}
+
+.tile img{
     width: 100%;
-    padding: 20px;
-  }
-  
-  /* Style the button used to pause/play the video */
-  #myBtn {
-    width: 200px;
-    font-size: 18px;
-    padding: 10px;
-    border: none;
-    background: #000;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  #myBtn:hover {
-    background: #ddd;
-    color: black;
-  }
-  span{
-      color: #e4c8ae;
-  }
+    height: 100%;
+    object-fit: cover;
+}
+.tile:nth-child(1){
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+.tile:nth-child(2),
+.tile:nth-child(3){
+    grid-column: span 2;
+}
+
+.tile:nth-child(4),
+.tile:nth-child(5){
+    grid-column: span 3;
+}
 
 
+
+
+    #sobre p{
+        color: #fff;
+        font-size: 1em;
+        margin: 30px 0;
+    }
+    #footer{
+        margin-top: 5px;
+        border-top: 1px solid gold;
+        background-color: #055368;
+        width: 100%;
+        text-align: center;
+        color: white;
+    }
