@@ -1,21 +1,18 @@
 const input = document.getElementById('input')
 const grind = document.getElementsByClassName('grid')
-const img = document.getElementsByClassName('img')
-[0]
+
+
 
 input.addEventListener('keydown', function(e){
     if(e.key === 'Enter')
     loadImg();
    
 })
-img.addEventListener('click', function(event){
-    
-})
 
 function loadImg(){
     removeImgs();
 
-    const url = 'https://api.unsplash.com/search/photos?query='+input.value+'&per_page=10&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo';
+    const url = 'https://api.unsplash.com/search/photos?query='+input.value+'&per_page=12&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo';
    
     fetch(url)
     
@@ -39,7 +36,7 @@ function loadImg(){
 
 }
 function removeImgs(){
-    grid.innerHTML= '';
+    grid.innerHTML='';
 
 
 
