@@ -16,7 +16,8 @@ menuBtn.addEventListener("click", () => {
   navigation.classList.add("active");
 });
 
-
-
-
+closeBtn.addEventListener("click", () => {
+  navigation.classList.remove("active");
+});
+  
 
