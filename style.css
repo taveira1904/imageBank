@@ -183,7 +183,7 @@ section{
 
     .navigation .nav-items{
         position: relative;
-        background: rgb(30, 27, 27);
+        background: rgb(255, 255, 255);
         width: 400px;
         max-width: 400px;
         display: grid;
