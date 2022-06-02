@@ -29,6 +29,10 @@ function loadImg(){
             images[i] = document.createElement('div')
             images[i].className = 'img'
             images[i].style.backgroundImage = 'url('+data.results[i].urls.raw+')'
+
+            images[i].setAttribute('data-id', data.results[i].id)
+
+            images[i].addEventListener("click", aparecerCaixa)
           
             grid.appendChild(images[i])
         }
@@ -37,7 +41,21 @@ function loadImg(){
 }
 function removeImgs(){
     grid.innerHTML='';
-
-
-
 }
+
+const menuBtn = document.querySelector(".nav-menu-btn");
+  const closeBtn = document.querySelector(".nav-close-btn");
+  const navigation = document.querySelector(".navigation");
+
+  menuBtn.addEventListener("click", () => {
+    navigation.classList.add("active");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    navigation.classList.remove("active");
+  });
+
+  function aparecerCaixa(e) {
+    const target = e.currentTarget
+    const id = target.getAttribute('data-id')
+  }
