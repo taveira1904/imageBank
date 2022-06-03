@@ -12,7 +12,7 @@ input.addEventListener('keydown', function(e){
 function loadImg(){
     removeImgs();
 
-    const url = 'https://api.unsplash.com/search/photos?query='+input.value+'&per_page=12&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo';
+    const url = 'https://api.unsplash.com/search/photos?query='+input.value+'&per_page=10&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo';
    
     fetch(url)
     
@@ -29,20 +29,46 @@ function loadImg(){
             images[i] = document.createElement('div')
             images[i].className = 'img'
             images[i].style.backgroundImage = 'url('+data.results[i].urls.raw+')'
-
             images[i].setAttribute('data-id', data.results[i].id)
 
             images[i].addEventListener("click", aparecerCaixa)
           
             grid.appendChild(images[i])
+
+
+            
         }
+
+        function aparecerCaixa(e) {
+          const target = e.currentTarget
+          const id = target.getAttribute('data-id')
+      
+          const textos = document.querySelectorAll('.texto')
+          
+          for (const texto of textos) {
+            texto.remove()
+          }
+
+          const mostrarId = document.createElement('div')
+          mostrarId.classList.add('texto')
+          mostrarId.textContent = id
+      
+          target.appendChild(mostrarId)
+      
+      
+         
+      
+          //Estilo
+      }
     })
 
 }
 function removeImgs(){
     grid.innerHTML='';
-}
 
+
+
+}
 const menuBtn = document.querySelector(".nav-menu-btn");
   const closeBtn = document.querySelector(".nav-close-btn");
   const navigation = document.querySelector(".navigation");
@@ -55,7 +81,3 @@ const menuBtn = document.querySelector(".nav-menu-btn");
     navigation.classList.remove("active");
   });
 
-  function aparecerCaixa(e) {
-    const target = e.currentTarget
-    const id = target.getAttribute('data-id')
-  }
